@@ -1,0 +1,24 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_lambda_function.Moazam_demo_lambdas (expand)" [label = "aws_lambda_function.Moazam_demo_lambdas", shape = "box"]
+		"[root] data.archive_file.lambda_artifacts (expand)" [label = "data.archive_file.lambda_artifacts", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/archive\"]" [label = "provider[\"registry.terraform.io/hashicorp/archive\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] var.Iam_role" [label = "var.Iam_role", shape = "note"]
+		"[root] aws_lambda_function.Moazam_demo_lambdas (expand)" -> "[root] data.archive_file.lambda_artifacts (expand)"
+		"[root] aws_lambda_function.Moazam_demo_lambdas (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_lambda_function.Moazam_demo_lambdas (expand)" -> "[root] var.Iam_role"
+		"[root] data.archive_file.lambda_artifacts (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/archive\"]"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_lambda_function.Moazam_demo_lambdas (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] local.lambda_funcions (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/archive\"] (close)" -> "[root] data.archive_file.lambda_artifacts (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_lambda_function.Moazam_demo_lambdas (expand)"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/archive\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+
+ 
