@@ -1,0 +1,8 @@
+1. Terraform version needs to be higher than 1.5.X
+2. We have to use terrform import config to import any of exisiting AWS resources. as shown below:
+    import {
+    to = aws_security_group.my-alb-security-group --> <resource_name>.<local_resource_name>
+    id = "sg-016dfd00755bb4f64" --> <ID of exisiting aws resource which needs to be imported using terraform import feature
+    }
+3. Need to use -genrate-config-out during terraform plan command as listed below:
+    terraform plan -generate-rate-config-out="example.tf"
